@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title> @ViewBag.Title </title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+    .socia-btn{
+        width:37px;
+        height:37px;
+
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Cửa hàng APPLE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hệ thống showroom</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bán hàng trực tuyến</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bán hàng trả góp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Khuyến mãi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tin tức</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container-fluid mt-3">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-2">
+                <img src="https://hanoicomputercdn.com/media/lib/15-07-2024/logo-hacom-since-2001.png" alt="Logo" class="logo">
+            </div>
+            <div class="col-6 rounded-pill">
+                <form class="form-inline d-flex gap-2 rounded-pill">
+                    <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.852 3.853a1 1 0 0 0 1.415-1.414l-3.85-3.837zm-6.242-3.578a4.5 4.5 0 1 1 6.364 6.364 4.5 4.5 0 0 1-6.364-6.364z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="col-4 d-flex gx-3">
+                <div class="socia-btn">
+                    <img class="socia-btn" src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19757.png" alt="Alternate Text" />
+                </div>
+    
+                <div class="socia-btn">
+                    <img class="socia-btn" src="https://1.bp.blogspot.com/-hY5-pNrOcKw/XeI_00cpCgI/AAAAAAAAF4A/J7jS49V8kNozycy0PgY6wfc7SUU9gulTgCLcBGAsYHQ/s1600/Youtube-Icon-square-2340x2340.png" alt="Alternate Text" />
+                </div>
+                <div class="socia-btn">
+                    <img class="socia-btn" src="https://th.bing.com/th/id/OIP.KEVdrsX3sLhAbIsy7zQs4QHaHa?rs=1&pid=ImgDetMain" alt="Alternate Text" />
+                </div>
+                <a href="@Url.Action("Login", "Account")" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Đăng nhập</a>
+
+
+            </div>
+        </div>
+    </div>
+
+   <div class="container-fluid p-3">
+      @RenderSection("mainTitle",required: false)
+      @* required : false parameter would ensure that the section is not required
+      *@
+      <hr>
+   </div>
+   <div class="container container-fluid"> @RenderBody()
+   </div>
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Thông tin liên hệ</h5>
+                    <ul class="list-unstyled">
+                        <li>Địa chỉ: Số nhà, tên đường, thành phố, quốc gia</li>
+                        <li>Số điện thoại: +123456789</li>
+                        <li>Email: info@example.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Các liên kết khác</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Hỗ trợ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Tên công ty. Bảo lưu mọi quyền.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   @await RenderSectionAsync("scripts", required: false)
+</body>
+
+</html>
